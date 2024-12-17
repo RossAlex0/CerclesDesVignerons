@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-import Header from "@/components/Header/Index";
-import Footer from "@/components/Footer/Index";
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Cercle Des Vigneron",
@@ -15,11 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

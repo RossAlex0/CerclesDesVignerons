@@ -1,0 +1,22 @@
+.navbar {
+  height: 10vh;
+  width: 100%;
+  padding-inline: 3rem;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  & div {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+
+    & h2 {
+      font-family: var(--font-prata);
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+  }
+}

@@ -1,13 +1,15 @@
 import Image from "next/image";
 
+import "./header.css";
+
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <Image
         src="/logo/logo_blanc.svg"
         alt="vignerons"
-        width={400}
-        height={600}
+        width={150}
+        height={75}
         placeholder="blur"
         blurDataURL="data:image/jpeg;base64,[...]"
       />
