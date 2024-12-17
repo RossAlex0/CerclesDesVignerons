@@ -1,0 +1,21 @@
+footer {
+  height: 10vh;
+  margin-inline: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & img {
+      width: 24px;
+    }
+  }
+  & p {
+    font-family: var(--font-noto);
+    color: white;
+  }
+}
