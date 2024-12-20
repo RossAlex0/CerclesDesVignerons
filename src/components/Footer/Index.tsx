@@ -4,10 +4,10 @@ import "./footer.css";
 
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid #FFFFFF" }}>
-      <p style={{ color: "#FFFFFF" }}>
-        27 route de l’europe, 33910 Saint-Denis de pile
-      </p>
+    <footer>
+      <div>
+        <p>27 route de l’europe, 33910 Saint-Denis de pile</p>
+      </div>
       <div>
         <Image
           src="/icon/tel_white.svg"
@@ -17,7 +17,7 @@ export default function Footer() {
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,[...]"
         />
-        <p style={{ color: "#FFF" }}>06 85 49 84 37 </p>
+        <p>06 85 49 84 37 </p>
       </div>
       <div>
         <Image
@@ -28,7 +28,7 @@ export default function Footer() {
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,[...]"
         />
-        <p style={{ color: "#FFF" }}>cercledesvigneron@aol.fr</p>
+        <p>cercledesvigneron@aol.fr</p>
       </div>
     </footer>
   );

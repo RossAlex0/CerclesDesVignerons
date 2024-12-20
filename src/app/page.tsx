@@ -1,46 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import Header from "@/components/Header/Index";
-import Footer from "@/components/Footer/Index";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 import "@/styles/home.css";
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    backgroundParallaxe();
-  }, []);
-
-  function backgroundParallaxe() {
-    const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-      const { clientX, clientY } = event;
-      const x = clientX / window.innerWidth;
-      const y = clientY / window.innerHeight;
-      setMousePosition({ x: x * 100, y: y * 30 });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }
+  const router = useRouter();
 
   return (
-    <main
-      className="main"
-      style={{
-        backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
-      }}
-    >
-      <Header />
-
+    <ParallaxBackground>
       <section>
         <div>
           <Image
-            src="/logo/simple_logo_white.svg"
+            src="/logo/simple_white_logo.svg"
             alt="cdv"
             width={200}
             height={200}
@@ -51,6 +26,7 @@ export default function Home() {
           <div className="btn">
             <button
               type="button"
+              onClick={() => router.push("/wine")}
               style={{ backgroundColor: "#B6935E", color: "#ffffff" }}
             >
               Découvrez nos vins
@@ -59,7 +35,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
-    </main>
+    </ParallaxBackground>
   );
 }
