@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Image
-        src="/logo/logo_blanc.svg"
+        src="/logo/white_logo.svg"
         alt="vignerons"
         width={150}
         height={75}

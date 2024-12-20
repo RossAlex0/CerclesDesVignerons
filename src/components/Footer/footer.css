@@ -1,14 +1,28 @@
 footer {
   height: 10vh;
-  margin-inline: 3rem;
+  width: 90vw;
+  padding-inline: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  border-top: 1px solid #ffffff;
+  position: absolute;
+  bottom: 0;
 
   & div {
+    width: calc(100% / 3);
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    &:nth-child(2) {
+      display: flex;
+      justify-content: center;
+    }
+    &:last-child {
+      display: flex;
+      justify-content: flex-end;
+    }
 
     & img {
       width: 24px;

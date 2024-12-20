@@ -1,0 +1,7 @@
+.parallax {
+  height: 100vh;
+  width: 100vw;
+  background: url("/images/background_home.webp");
+  background-size: 110%;
+  background-position: center;
+}
