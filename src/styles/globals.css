@@ -8,7 +8,8 @@
 
 :root {
   --primary-color: #2b090b;
-  --white-color: #ffffff;
+  --white-color: #f5f5f5;
+  --or-color: #b6935e;
   --font-prata: "Prata", serif;
   --font-noto: "Noto Sans", sans-serif;
 }
@@ -19,4 +20,19 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+}
+
+@keyframes scaleBtn {
+  0% {
+    transform: calc(1);
+  }
+  25% {
+    transform: scale(0.98);
+  }
+  75% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
