@@ -12,8 +12,8 @@ export default function Home() {
 
   return (
     <ParallaxBackground>
-      <section>
-        <div>
+      <section className="home">
+        <div className="home_container">
           <Image
             src="/logo/simple_white_logo.svg"
             alt="cdv"
@@ -23,12 +23,8 @@ export default function Home() {
           <h1>
             Savourez l&apos;authenticité <br /> des vins de Saint-Émilion.
           </h1>
-          <div className="btn">
-            <button
-              type="button"
-              onClick={() => router.push("/wine")}
-              style={{ backgroundColor: "#B6935E", color: "#ffffff" }}
-            >
+          <div className="home_container_btn">
+            <button type="button" onClick={() => router.push("/wine")}>
               Découvrez nos vins
             </button>
             <button type="button">Contactez-nous</button>
