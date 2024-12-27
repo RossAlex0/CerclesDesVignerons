@@ -4,10 +4,20 @@ import "./parallaxBackground.css";
 
 export default function ParallaxBackground({
   children,
+  background_URL,
 }: {
   children: React.ReactNode;
+  background_URL?: string;
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const [backgroundURL, setBackgroundURL] = useState("background_home.webp");
+
+  useEffect(() => {
+    if (background_URL) {
+      setBackgroundURL(background_URL);
+    }
+  }, [background_URL]);
 
   useEffect(() => {
     parallaxEffect();
@@ -29,6 +39,7 @@ export default function ParallaxBackground({
     <main
       className="parallax"
       style={{
+        backgroundImage: `url(/images/${backgroundURL})`,
         backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
       }}
     >
