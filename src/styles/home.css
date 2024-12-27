@@ -1,19 +1,11 @@
-.main {
-  height: 100vh;
-  width: 100vw;
-  background: url("/images/background_home.webp");
-  background-size: 110%;
-  background-position: center;
-}
-
-section {
+.home {
   height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  & div {
+  & .home_container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,10 +22,15 @@ section {
   }
 }
 
-.btn {
+.home_container_btn {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+
+  & button:first-child {
+    background-color: #b6935e;
+    color: #ffffff;
+  }
 
   & button:last-child {
     color: white;
@@ -51,20 +48,5 @@ section {
     &:hover {
       animation: scaleBtn 1.4s linear;
     }
-  }
-}
-
-@keyframes scaleBtn {
-  0% {
-    transform: calc(1);
-  }
-  25% {
-    transform: scale(0.98);
-  }
-  75% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
   }
 }
