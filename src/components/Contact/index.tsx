@@ -1,27 +1,27 @@
 import Image from "next/image";
 import contact from "./contact.json";
 
+import "./contact.css";
+
 export default function Contact() {
   return (
-    <div>
+    <div className="contact_container">
       <section>
         {contact.map((c) => (
-          <>
-            <div>
-              <h2>{c.title}</h2>
-              {c.type === "adresse" ? (
-                <address>{c.description}</address>
-              ) : (
-                <a
-                  href={`${c.type === "mail" ? "mailto" : "tel"}:${
-                    c.description
-                  }`}
-                >
-                  {c.description}
-                </a>
-              )}
-            </div>
-          </>
+          <div key={c.type} className="contact_info">
+            <h3>{c.title} :</h3>
+            {c.type === "adresse" ? (
+              <address>{c.description}</address>
+            ) : (
+              <a
+                href={`${c.type === "mail" ? "mailto" : "tel"}:${
+                  c.description
+                }`}
+              >
+                {c.description}
+              </a>
+            )}
+          </div>
         ))}
         <p>
           Luc Lacombe, président du Cercle des Vignerons et Yoan Lacombe
@@ -30,7 +30,7 @@ export default function Contact() {
         </p>
         <p>
           Nous serons ravis de répondre à toutes vos demandes. À bientôt autour
-          d'un verre de vin d'exception ! 🍷
+          d&apos;un verre de vin d&apos;exception ! 🍷
         </p>
       </section>
       <section>

@@ -7,3 +7,24 @@
   position: absolute;
   top: 0;
 }
+
+.backButton {
+  padding: 0.3rem 0.7rem;
+  margin-left: 1.2rem;
+  border-radius: 40px;
+  font-family: var(--font-noto);
+  border: none;
+  cursor: pointer;
+  background: #ffffffcd;
+  color: var(--primary-color);
+  margin-bottom: 1.8rem;
+
+  &:hover {
+    animation: scaleBtn 1.4s linear;
+  }
+
+  &:active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+}
