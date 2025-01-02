@@ -89,7 +89,7 @@
     padding-top: 1rem;
     padding-inline: 2rem;
     text-align: center;
-    font-size: clamp(0.7rem, 1.2vw, 1rem); /* Taille réduite */
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
   }
 }
 
