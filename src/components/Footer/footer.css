@@ -8,19 +8,20 @@ footer {
   border-top: 1px solid #ffffff;
   position: absolute;
   bottom: 0;
+  transition: all 3s;
 
-  & div {
+  & .div_min {
     width: calc(100% / 3);
     display: flex;
     align-items: center;
     gap: 1rem;
+    opacity: 0;
+    animation: opacity 1.5s forwards;
 
     &:nth-child(2) {
-      display: flex;
       justify-content: center;
     }
     &:last-child {
-      display: flex;
       justify-content: flex-end;
     }
 

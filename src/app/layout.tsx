@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-
-import Header from "@/components/Header/Index";
-import Footer from "@/components/Footer/Index";
+import Head from "next/head";
 
 import "../styles/globals.css";
 
@@ -13,6 +11,25 @@ export const metadata: Metadata = {
   },
 };
 
+const personCDV = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Luc Lacombe",
+      jobTitle: "Président Cercle Des Vignerons",
+      telephone: "06 85 26 94 30",
+      email: "cerclevigneron@aol.fr",
+    },
+    {
+      "@type": "Person",
+      name: "Yoan Lacombe",
+      jobTitle: "Négociant en vins",
+      email: "cerclevigneron@aol.fr",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,11 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personCDV) }}
+        />
+      </Head>
+      <body>{children}</body>
     </html>
   );
 }

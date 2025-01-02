@@ -1,0 +1,47 @@
+.contact_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  transition: all 1.5s;
+
+  & section {
+    margin-block: 7rem;
+    animation: opacity 4s forwards;
+    height: 65%;
+  }
+
+  & section:first-child {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+  }
+
+  & section:last-child {
+    margin-right: 3rem;
+    padding-inline: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e090db6;
+    border-radius: 100px;
+
+    & img {
+      border-block: 1px solid var(--white-color);
+    }
+  }
+}
+
+.contact_info {
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  & a {
+    text-decoration: none;
+    color: var(--white-color);
+  }
+}
