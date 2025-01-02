@@ -21,7 +21,8 @@ export default function Home() {
             height={200}
           />
           <h1>
-            Savourez l&apos;authenticité <br /> des vins de Saint-Émilion.
+            Savourez l&apos;authenticité <br />
+            et la richesse des grands vins.
           </h1>
           <div className="home_container_btn">
             <button type="button" onClick={() => router.push("/wine")}>

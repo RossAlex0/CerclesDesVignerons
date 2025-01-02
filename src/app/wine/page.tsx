@@ -29,7 +29,7 @@ export default function WineScreen() {
             </button>
             {regions.map((region) => (
               <button
-                key={region.name}
+                key={region.id}
                 type="button"
                 onClick={() => setRegionActive(region)}
                 style={

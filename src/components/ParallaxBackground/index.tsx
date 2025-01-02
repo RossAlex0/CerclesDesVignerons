@@ -11,11 +11,13 @@ export default function ParallaxBackground({
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const [backgroundURL, setBackgroundURL] = useState("background_home.webp");
+  const [backgroundStateURL, setBackgroundStateURL] = useState(
+    "background_home.webp"
+  );
 
   useEffect(() => {
     if (background_URL) {
-      setBackgroundURL(background_URL);
+      setBackgroundStateURL(background_URL);
     }
   }, [background_URL]);
 
@@ -39,7 +41,7 @@ export default function ParallaxBackground({
     <main
       className="parallax"
       style={{
-        backgroundImage: `url(/images/${backgroundURL})`,
+        backgroundImage: `url(/images/${backgroundStateURL})`,
         backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
       }}
     >
