@@ -48,28 +48,31 @@ export default function WineScreen() {
           <div className="region_description">
             <h1>Description</h1>
             <p>{regionActive.description}</p>
-            <button
-              type="button"
-              onClick={() =>
-                handleSpeak(regionActive.description, setIsSpeaking)
-              }
-              style={
-                isSpeaking ? { border: "none" } : { border: "1px solid green" }
-              }
-              disabled={isSpeaking}
-            >
-              🔊
-            </button>
-            <button
-              type="button"
-              onClick={() => handleStop(setIsSpeaking)}
-              style={
-                isSpeaking ? { border: "1px solid red" } : { border: "none" }
-              }
-              disabled={!isSpeaking}
-            >
-              🔇
-            </button>
+            <div className="absolute_link">
+              <div className="sound_btn_container">
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleSpeak(regionActive.description, setIsSpeaking)
+                  }
+                  style={isSpeaking ? { opacity: 0.85 } : { cursor: "pointer" }}
+                  disabled={isSpeaking}
+                >
+                  🔊
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleStop(setIsSpeaking)}
+                  style={isSpeaking ? { cursor: "pointer" } : { opacity: 0.85 }}
+                  disabled={!isSpeaking}
+                >
+                  🔇
+                </button>
+              </div>
+              <a href="#" download={"CercleDesVignerons_Tarifs"}>
+                Télécharger la grille tarifaire
+              </a>
+            </div>
           </div>
         </div>
       </section>
