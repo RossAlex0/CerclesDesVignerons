@@ -3,5 +3,6 @@
   width: 100vw;
   background-size: 110%;
   background-position: center;
-  transition: backgroundImage 1s;
+  background-color: #000;
+  transition: background-image 0.5s;
 }

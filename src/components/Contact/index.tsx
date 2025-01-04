@@ -10,16 +10,12 @@ export default function Contact() {
         {contact.map((c) => (
           <div key={c.type} className="contact_info">
             <h3>{c.title} :</h3>
-            {c.type === "adresse" ? (
+            {c.type === "horaire" ? (
+              <p>{c.description}</p>
+            ) : c.type === "adress" ? (
               <address>{c.description}</address>
             ) : (
-              <a
-                href={`${c.type === "mail" ? "mailto" : "tel"}:${
-                  c.description
-                }`}
-              >
-                {c.description}
-              </a>
+              <a href={`${c.type}:${c.description}`}>{c.description}</a>
             )}
           </div>
         ))}
@@ -27,8 +23,7 @@ export default function Contact() {
           Luc Lacombe, président du Cercle des Vignerons et Yoan Lacombe
           négociant en vins, sont à votre disposition pour vous accompagner dans
           vos projets autour du vin.
-        </p>
-        <p>
+          <br />
           Nous serons ravis de répondre à toutes vos demandes. À bientôt autour
           d&apos;un verre de vin d&apos;exception ! 🍷
         </p>
