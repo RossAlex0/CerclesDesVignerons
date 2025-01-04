@@ -30,6 +30,15 @@ const personCDV = {
   ],
 };
 
+const preloadPicture = [
+  { image: "/images/background_home.webp" },
+  { image: "/images/bordeauxReg.webp" },
+  { image: "/images/bourgogneReg.webp" },
+  { image: "/images/champagneReg.webp" },
+  { image: "/images/champagneReg.webp" },
+  { image: "/images/rhoneReg.webp" },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,6 +51,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personCDV) }}
         />
+        {preloadPicture.map((images) => (
+          <link
+            rel="preload"
+            as="image"
+            href={images.image}
+            key={images.image}
+          />
+        ))}
       </Head>
       <body>{children}</body>
     </html>

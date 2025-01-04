@@ -7,7 +7,7 @@
   transition: all 1.5s;
 
   & section {
-    margin-block: 7rem;
+    margin-top: 5rem;
     animation: opacity 4s forwards;
     height: 65%;
   }
