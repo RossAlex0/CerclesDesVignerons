@@ -34,3 +34,12 @@ footer {
     color: white;
   }
 }
+
+@media (width < 720px) {
+  footer {
+    height: 5vh;
+  }
+  .div_min {
+    display: none !important;
+  }
+}
