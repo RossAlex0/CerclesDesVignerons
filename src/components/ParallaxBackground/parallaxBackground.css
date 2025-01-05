@@ -6,3 +6,9 @@
   background-color: #000;
   transition: background-image 0.5s;
 }
+
+@media (900px > width > 720px) {
+  .parallax {
+    background-size: auto 100%;
+  }
+}
