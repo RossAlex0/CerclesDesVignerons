@@ -1,11 +1,26 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { screenWidth } from "./services";
 
-import "./footer.css";
 import Contact from "@/components/Contact/index";
 
+import "./footer.css";
+
 export default function Footer({ viewContact }: { viewContact?: boolean }) {
+  const [widthPx, setWidthPx] = useState<number>();
+
+  useEffect(() => {
+    screenWidth(setWidthPx);
+  }, []);
+
   return (
-    <footer style={viewContact ? { height: "86vh" } : { height: "10vh" }}>
+    <footer
+      style={
+        viewContact
+          ? { height: "86vh" }
+          : { height: widthPx && widthPx < 720 ? "5vh" : "10vh" }
+      }
+    >
       {viewContact ? (
         <Contact />
       ) : (
