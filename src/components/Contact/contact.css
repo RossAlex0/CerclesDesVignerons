@@ -45,3 +45,19 @@
     color: var(--white-color);
   }
 }
+
+@media (width < 720px) {
+  .contact_container {
+    justify-content: center;
+    gap: 0;
+
+    & section:first-child {
+      width: 100%;
+      text-align: center;
+    }
+
+    & section:last-child {
+      display: none;
+    }
+  }
+}

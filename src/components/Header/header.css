@@ -28,3 +28,9 @@
     color: var(--white-color);
   }
 }
+
+@media (width < 720px) {
+  .navbar {
+    padding-inline: 1.5rem;
+  }
+}

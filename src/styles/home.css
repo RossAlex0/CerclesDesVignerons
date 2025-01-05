@@ -50,3 +50,26 @@
     }
   }
 }
+
+@media (width < 720px) {
+  .home {
+    margin-top: 12vh;
+
+    & h1 {
+      font-size: 2rem;
+    }
+
+    & .home_container {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  .home_container_btn {
+    gap: 0.5rem;
+
+    & button {
+      padding-block: 0.5rem;
+      width: 10rem;
+    }
+  }
+}
