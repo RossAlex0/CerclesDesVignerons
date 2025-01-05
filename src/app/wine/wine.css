@@ -51,6 +51,7 @@
     cursor: pointer;
     transition: transform 0.6s ease, box-shadow 0.6s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
 
     &:hover {
       transform: translateY(-10px);
@@ -121,6 +122,7 @@
     padding: 0.4rem;
     border-radius: 48px;
     background-color: var(--primary-color);
+    white-space: nowrap;
     transition: all 1s;
 
     &:hover {
@@ -142,5 +144,26 @@
     height: 2rem;
     padding: 0.4rem;
     border: none;
+  }
+}
+
+@media (900px > width > 720px) {
+  .region_btn {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .region_description {
+    margin-top: 6rem;
+
+    & h1 {
+      font-size: clamp(1.5rem, 2vw, 1.8rem);
+    }
+
+    & p {
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+    }
+  }
+  .backBtn {
+    margin-top: 5rem;
   }
 }
