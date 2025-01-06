@@ -29,7 +29,7 @@ export default function Home() {
             }
           >
             <Image
-              src="/logo/simple_white_logo.svg"
+              src="/logo/simple_white_logo.webp"
               alt="cdv"
               width={200}
               height={200}
