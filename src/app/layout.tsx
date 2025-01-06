@@ -4,9 +4,9 @@ import "../styles/globals.css";
 import Head from "next/head";
 
 const preloadPicture = [
+  { image: "/logo/simple_white_logo.svg" },
   { image: "/images/background_home.webp" },
   { image: "/logo/white_logo.svg" },
-  { image: "/logo/simple_white_logo.webp" },
 ];
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: preloadPicture.map((image) => image.image),
   },
   icons: {
-    icon: "/logo/simple_white_logo.webp",
+    icon: "/logo/simple_white_logo.svg",
   },
   creator: "Rossignol Alex",
 };

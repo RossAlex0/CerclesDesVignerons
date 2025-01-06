@@ -29,10 +29,10 @@ export default function Home() {
             }
           >
             <Image
-              src="/logo/simple_white_logo.webp"
+              src="/logo/simple_white_logo.svg"
               alt="cdv"
-              width={200}
-              height={200}
+              width={150}
+              height={147}
             />
             <h1>
               Savourez l&apos;authenticité <br />
