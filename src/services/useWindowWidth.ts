@@ -1,23 +1,19 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 export default function useWindowWidth(): number {
-  const [screenWidth, setScreenWidth] = useState<number>(0);
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
+  const getWindowWidth = () => {
+    setScreenWidth(window.innerWidth);
+  };
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const getWindowWidth = () => {
-        setScreenWidth(window.innerWidth);
-      };
+    window.addEventListener("resize", getWindowWidth);
 
-      getWindowWidth();
-
-      window.addEventListener("resize", getWindowWidth);
-
-      return () => {
-        window.removeEventListener("resize", getWindowWidth);
-      };
-    }
+    return () => {
+      window.removeEventListener("resize", getWindowWidth);
+    };
   }, []);
-
   return screenWidth;
 }
