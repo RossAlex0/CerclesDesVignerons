@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 export default function useWindowWidth(): number {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
-  const getWindowWidth = () => {
-    setScreenWidth(window.innerWidth);
-  };
   useEffect(() => {
+    const getWindowWidth = () => {
+      if (window !== undefined) {
+        setScreenWidth(window.innerWidth);
+      }
+    };
+
+    getWindowWidth();
+
     window.addEventListener("resize", getWindowWidth);
 
     return () => {
