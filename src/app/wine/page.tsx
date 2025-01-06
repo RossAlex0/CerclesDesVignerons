@@ -1,10 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ParallaxBackground from "@/components/ParallaxBackground";
 import { handleSpeak, handleStop, Region } from "./services";
+import { screenWidth } from "@/components/Footer/services";
 import regions from "./regions.json";
 
 import Footer from "@/components/Footer/Index";
@@ -17,6 +18,11 @@ export default function WineScreen() {
 
   const [regionActive, setRegionActive] = useState<Region>(regions[0]);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [widthPx, setWidthPx] = useState<number>();
+
+  useEffect(() => {
+    screenWidth(setWidthPx);
+  }, []);
 
   return (
     <>
@@ -55,13 +61,22 @@ export default function WineScreen() {
             </div>
             <div className="region_description">
               <h1>Description</h1>
-              <p>{regionActive.description}</p>
+              <p>
+                {widthPx && widthPx < 720
+                  ? regionActive.descriptionTel
+                  : regionActive.description}
+              </p>
               <div className="absolute_link">
                 <div className="sound_btn_container">
                   <button
                     type="button"
                     onClick={() =>
-                      handleSpeak(regionActive.description, setIsSpeaking)
+                      handleSpeak(
+                        widthPx && widthPx < 720
+                          ? regionActive.descriptionTel
+                          : regionActive.description,
+                        setIsSpeaking
+                      )
                     }
                     style={
                       isSpeaking ? { opacity: 0.85 } : { cursor: "pointer" }
