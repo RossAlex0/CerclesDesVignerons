@@ -5,11 +5,8 @@ import Head from "next/head";
 
 const preloadPicture = [
   { image: "/images/background_home.webp" },
-  { image: "/images/bordeauxReg.webp" },
-  { image: "/images/bourgogneReg.webp" },
-  { image: "/images/champagneReg.webp" },
-  { image: "/images/champagneReg.webp" },
-  { image: "/images/rhoneReg.webp" },
+  { image: "/logo/white_logo.svg" },
+  { image: "/logo/simple_white_logo.svg" },
 ];
 
 export const metadata: Metadata = {
