@@ -12,8 +12,8 @@ export default function Footer({ viewContact }: { viewContact?: boolean }) {
     <footer
       style={
         viewContact
-          ? { height: "86vh" }
-          : { height: windowWidth < 720 ? "5vh" : "10vh" }
+          ? { height: "86dvh" }
+          : { height: windowWidth < 720 ? "5dvh" : "10dvh" }
       }
     >
       {viewContact ? (
