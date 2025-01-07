@@ -16,28 +16,26 @@ export default function DescriptionMobile({
 }) {
   const router = useRouter();
 
-  const [startX, setStartX] = useState(0);
-  const [endX, setEndX] = useState(0);
+  const [startTouchX, setStartTouchX] = useState(0);
+  const [endTouchX, setEndTouchX] = useState(0);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     const touchStart = e.touches[0];
-    setStartX(touchStart.clientX);
+    setStartTouchX(touchStart.clientX);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     const touchMove = e.touches[0];
-    setEndX(touchMove.clientX);
+
+    setEndTouchX(touchMove.clientX);
   };
 
   const handleTouchEnd = () => {
-    if (startX > endX + 50) {
-      if (region.id >= regions.length) {
-        setRegion(regions[region.id - 1 + 1]);
-      }
-    } else if (startX < endX - 50) {
-      if (region.id <= 1) {
-        setRegion(regions[region.id - 1 - 1]);
-      }
+    console.info(startTouchX, "vs end =>", endTouchX);
+    if (region.id <= regions.length && startTouchX > endTouchX + 40) {
+      setRegion(regions[region.id - 1 + 1]);
+    } else if (region.id >= 1 && startTouchX < endTouchX - 40) {
+      setRegion(regions[region.id - 1 - 1]);
     }
   };
 
