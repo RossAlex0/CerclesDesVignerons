@@ -1,5 +1,6 @@
 footer {
   height: 10vh;
+  height: 10dvh;
   width: 90vw;
   padding-inline: 2rem;
   display: flex;
@@ -38,6 +39,7 @@ footer {
 @media (width < 720px) {
   footer {
     height: 5vh;
+    height: 5dvh;
   }
   .div_min {
     display: none !important;
