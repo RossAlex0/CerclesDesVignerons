@@ -31,10 +31,9 @@ export default function DescriptionMobile({
   };
 
   const handleTouchEnd = () => {
-    console.info(startTouchX, "vs end =>", endTouchX);
-    if (region.id <= regions.length && startTouchX > endTouchX + 40) {
+    if (region.id < regions.length && startTouchX > endTouchX + 40) {
       setRegion(regions[region.id - 1 + 1]);
-    } else if (region.id >= 1 && startTouchX < endTouchX - 40) {
+    } else if (region.id > 1 && startTouchX < endTouchX - 40) {
       setRegion(regions[region.id - 1 - 1]);
     }
   };
