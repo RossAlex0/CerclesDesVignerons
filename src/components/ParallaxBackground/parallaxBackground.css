@@ -2,10 +2,10 @@
   height: 100vh;
   height: 100dvh;
   width: 100vw;
-  background-size: 110%;
+  background-size: 110% 120%;
   background-position: center;
   background-color: #000;
-  transition: background-image 0.5s;
+  transition: background-image 0.8s;
 }
 
 @media (900px > width > 720px) {
@@ -18,6 +18,19 @@
 @media (width < 720px) {
   .parallax {
     height: 100dvh;
-    background-size: auto 720px;
+    background-size: 1000px 900px;
+    overflow: hidden;
+  }
+}
+
+@keyframes bgImage {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

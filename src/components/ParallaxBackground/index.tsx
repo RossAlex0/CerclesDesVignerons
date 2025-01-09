@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./parallaxBackground.css";
+import useWindowWidth from "@/services/useWindowWidth";
 
 export default function ParallaxBackground({
   children,
@@ -9,6 +10,7 @@ export default function ParallaxBackground({
   children: React.ReactNode;
   background_URL?: string;
 }) {
+  const screenWidth = useWindowWidth();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const [backgroundStateURL, setBackgroundStateURL] = useState(
@@ -22,8 +24,10 @@ export default function ParallaxBackground({
   }, [background_URL]);
 
   useEffect(() => {
-    parallaxEffect();
-  }, []);
+    if (screenWidth >= 900) {
+      parallaxEffect();
+    }
+  }, [screenWidth]);
 
   function parallaxEffect() {
     const handleMouseMove = (event: { clientX: number; clientY: number }) => {

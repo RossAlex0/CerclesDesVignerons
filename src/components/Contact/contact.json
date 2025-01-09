@@ -1,10 +1,14 @@
 [
   {
     "title": "Adresse",
-    "description": "27 route de l’europe, 33910 Saint-Denis de pile",
+    "description": "37 route de l’europe, 33910 Saint-Denis de pile",
     "type": "adress"
   },
-  { "title": "Téléphone", "description": "06 85 26 94 30", "type": "tel" },
+  {
+    "title": "Téléphone",
+    "description": "06 85 26 94 30 - 06 87 34 08 74",
+    "type": "tel"
+  },
   { "title": "Mail", "description": "cerclevigneron@aol.fr", "type": "mailto" },
   {
     "title": "Horaire",

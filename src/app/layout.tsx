@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import "../styles/globals.css";
-import Head from "next/head";
 
 const preloadPicture = [
   { image: "/logo/simple_white_logo.svg" },
@@ -29,25 +28,26 @@ export const metadata: Metadata = {
     icon: "/logo/simple_white_logo.svg",
   },
   creator: "Rossignol Alex",
-};
-
-const personCDV = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      name: "Luc Lacombe",
-      jobTitle: "Président Cercle Des Vignerons",
-      telephone: "06 85 26 94 30",
-      email: "cerclevigneron@aol.fr",
-    },
-    {
-      "@type": "Person",
-      name: "Yoan Lacombe",
-      jobTitle: "Négociant en vins",
-      email: "cerclevigneron@aol.fr",
-    },
-  ],
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          name: "Luc Lacombe",
+          jobTitle: "Président Cercle Des Vignerons",
+          telephone: "06 85 26 94 30",
+          email: "cerclevigneron@aol.fr",
+        },
+        {
+          "@type": "Person",
+          name: "Yoan Lacombe",
+          jobTitle: "Négociant en vins",
+          email: "cerclevigneron@aol.fr",
+        },
+      ],
+    }),
+  },
 };
 
 export default function RootLayout({
@@ -57,12 +57,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personCDV) }}
-        />
-      </Head>
       <body>{children}</body>
     </html>
   );

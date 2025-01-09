@@ -61,10 +61,15 @@
 
     & .home_container {
       padding-inline: 1.5rem;
+
+      & img {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 
   .home_container_btn {
+    margin-top: 0.5rem;
     gap: 0.5rem;
 
     & button {

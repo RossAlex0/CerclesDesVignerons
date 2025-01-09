@@ -9,6 +9,7 @@ footer {
   border-top: 1px solid #ffffff;
   position: absolute;
   bottom: 0;
+  overflow: hidden;
   transition: all 3s;
 
   & .div_min {
@@ -29,10 +30,13 @@ footer {
     & img {
       width: 24px;
     }
-  }
-  & p {
-    font-family: var(--font-noto);
-    color: white;
+    & address,
+    a {
+      font-family: var(--font-noto);
+      color: white;
+      text-decoration: none;
+      font-style: normal;
+    }
   }
 }
 
