@@ -2,6 +2,7 @@ import Image from "next/image";
 import useWindowWidth from "@/services/useWindowWidth";
 
 import Contact from "@/components/Contact/index";
+import contactsJson from "@/components/Contact/contact.json";
 
 import "./footer.css";
 
@@ -21,11 +22,23 @@ export default function Footer({ viewContact }: { viewContact?: boolean }) {
       ) : (
         <>
           <div className="div_min">
-            <p>27 route de l’europe, 33910 Saint-Denis de pile</p>
+            {contactsJson.map(
+              (c) =>
+                c.title === "Adresse" && (
+                  <address key={c.title}>{c.description}</address>
+                )
+            )}
           </div>
           <div className="div_min">
             <Image src="/icon/tel_white.svg" alt="tel" width={24} height={24} />
-            <p>06 85 49 84 37 </p>
+            {contactsJson.map(
+              (c) =>
+                c.title === "Téléphone" && (
+                  <a key={c.title} href={`${c.type}:${c.description}`}>
+                    {c.description}
+                  </a>
+                )
+            )}
           </div>
           <div className="div_min">
             <Image
@@ -34,7 +47,14 @@ export default function Footer({ viewContact }: { viewContact?: boolean }) {
               width={24}
               height={24}
             />
-            <p>cercledesvigneron@aol.fr</p>
+            {contactsJson.map(
+              (c) =>
+                c.title === "Mail" && (
+                  <a key={c.title} href={`${c.type}:${c.description}`}>
+                    {c.description}
+                  </a>
+                )
+            )}
           </div>
         </>
       )}
